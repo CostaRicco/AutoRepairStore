@@ -10,10 +10,11 @@ class Migration(migrations.Migration):
         ('salons', '0005_alter_salon_image'),
         ('service', '0005_service_price_alter_service_duration_and_more'),
     ]
-
+ 
     operations = [
         migrations.AddField(
             model_name='service',
+            admin_name='admin',
             name='salon',
             field=models.ForeignKey(default='', on_delete=django.db.models.deletion.PROTECT, to='salons.salon', verbose_name='Салон'),
             preserve_default=False,
