@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
         ('salons', '0005_alter_salon_image'),
         ('service', '0005_service_price_alter_service_duration_and_more'),
     ]
-
+ 
     operations = [
         migrations.AddField(
             model_name='service',
