@@ -18,10 +18,10 @@ class Salon(models.Model):
     owner
     time_in
     time_out
-    image
+    imageМагазин
     """
     # social = models.ForeignKey(Social, on_delete=models.CASCADE, verbose_name='Соц сеть')
-    name = models.CharField(verbose_name = 'Название салона', max_length = 256)
+    name = models.CharField(verbose_name = 'Название Магазин', max_length = 256)
     address = models.CharField(verbose_name='Адрес', max_length=256)
     phone = models.CharField(verbose_name='Телефон', max_length=256)
     email = models.CharField(verbose_name='email', max_length=256)
@@ -29,7 +29,7 @@ class Salon(models.Model):
     # owner = models.OneToOne
     time_in = models.TimeField(verbose_name='Время начала работы')
     time_out = models.TimeField(verbose_name='Время окончания работы')
-    image = models.ImageField(verbose_name='Картинка салона', upload_to='images/salons/')
+    image = models.ImageField(verbose_name='Картинка Магазин', upload_to='images/salons/')
     
 
     def __str__(self):
@@ -41,7 +41,7 @@ class Social(models.Model):
     url - models.CharField
 
     """
-    salon = models.ForeignKey(Salon, on_delete=models.CASCADE, verbose_name='Салон')
+    salon = models.ForeignKey(Salon, on_delete=models.CASCADE, verbose_name='Магазин')
     name = models.CharField(verbose_name='Название соц. сети', max_length=256)
     url = models.CharField(verbose_name='URL', max_length=256)
 
@@ -61,7 +61,7 @@ class Master(models.Model):
         ('MD', 'Мастер'),
         ('TP', 'Топ'),
     )
-    salon = models.OneToOneField(Salon, on_delete=models.CASCADE, verbose_name='Салон')
+    salon = models.OneToOneField(Salon, on_delete=models.CASCADE, verbose_name='Магазин')
     fits_name = models.CharField(verbose_name='Имя мастера', max_length=256)
     last_name = models.CharField(verbose_name='Фамилия мастера', max_length=256)
     rank = models.CharField(verbose_name='Ранг мастера', max_length=256, choices=RANK)
