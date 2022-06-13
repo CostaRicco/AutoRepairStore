@@ -12,6 +12,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.RemoveField(
             model_name='service',
+            admin_name='admin',
             name='salon',
         ),
     ]
